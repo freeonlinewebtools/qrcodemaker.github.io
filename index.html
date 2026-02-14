@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX" />
+  <meta name="google-site-verification" content="PASTE_GOOGLE_SEARCH_CONSOLE_TOKEN" />
+  <meta name="msvalidate.01" content="PASTE_BING_WEBMASTER_TOKEN" />
+  <title>Free QR Code Generator — No Signup, No Tracking | QRForge</title>
+  <meta name="description" content="Generate QR codes for URLs, WiFi, text, email, and contacts instantly. Free, private, no signup required. Download as PNG or SVG." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0066ff" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free QR Code Generator — No Signup, No Tracking | QRForge" />
+  <meta name="twitter:description" content="Generate QR codes for URL, WiFi, text, email, and contacts. Download PNG or SVG instantly." />
+  <meta property="og:title" content="Free QR Code Generator — No Signup, No Tracking | QRForge" />
+  <meta property="og:description" content="Generate QR codes for URLs, WiFi, text, email, and contacts instantly. Free, private, no signup required. Download as PNG or SVG." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://grrrp.github.io/qrforge/" />
+  <meta property="og:image" content="https://grrrp.github.io/qrforge/og-preview.svg" />
+  <link rel="canonical" href="https://grrrp.github.io/qrforge/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "QRForge",
+    "url": "https://grrrp.github.io/qrforge/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "description": "Generate QR codes for URLs, WiFi, text, email, and contacts instantly.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is QRForge free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. QRForge is free and does not require signup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you store generated QR data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. QR generation runs locally in your browser and data is not uploaded."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "QRForge QR Types",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "URL QR Code"},
+      {"@type": "ListItem", "position": 2, "name": "Text QR Code"},
+      {"@type": "ListItem", "position": 3, "name": "WiFi QR Code"},
+      {"@type": "ListItem", "position": 4, "name": "vCard QR Code"},
+      {"@type": "ListItem", "position": 5, "name": "Email QR Code"}
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">QRForge</div>
+    <p class="privacy-note">Your data never leaves your browser.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <h1>Generate QR Codes Instantly</h1>
+
+      <nav class="tabs" aria-label="QR types">
+        <button class="tab active" data-type="url">URL</button>
+        <button class="tab" data-type="text">Text</button>
+        <button class="tab" data-type="wifi">WiFi</button>
+        <button class="tab" data-type="vcard">vCard</button>
+        <button class="tab" data-type="email">Email</button>
+      </nav>
+
+      <div class="tab-panel active" data-panel="url">
+        <label>Website URL
+          <input id="urlInput" type="url" placeholder="https://example.com" />
+        </label>
+      </div>
+
+      <div class="tab-panel" data-panel="text">
+        <label>Text
+          <textarea id="textInput" rows="4" placeholder="Type any text..."></textarea>
+        </label>
+      </div>
+
+      <div class="tab-panel" data-panel="wifi">
+        <label>SSID
+          <input id="wifiSsid" type="text" placeholder="MyNetwork" />
+        </label>
+        <label>Password
+          <input id="wifiPassword" type="text" placeholder="Password" />
+        </label>
+        <label>Encryption
+          <select id="wifiEncryption">
+            <option value="WPA">WPA/WPA2</option>
+            <option value="WEP">WEP</option>
+            <option value="nopass">None</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="tab-panel" data-panel="vcard">
+        <label>Full Name
+          <input id="vName" type="text" placeholder="Jane Doe" />
+        </label>
+        <label>Phone
+          <input id="vPhone" type="tel" placeholder="+1 555 123 4567" />
+        </label>
+        <label>Email
+          <input id="vEmail" type="email" placeholder="jane@example.com" />
+        </label>
+        <label>Company
+          <input id="vCompany" type="text" placeholder="Acme Inc" />
+        </label>
+        <label>Website
+          <input id="vWebsite" type="url" placeholder="https://example.com" />
+        </label>
+      </div>
+
+      <div class="tab-panel" data-panel="email">
+        <label>Email Address
+          <input id="eAddress" type="email" placeholder="hello@example.com" />
+        </label>
+        <label>Subject
+          <input id="eSubject" type="text" placeholder="Hello" />
+        </label>
+        <label>Body
+          <textarea id="eBody" rows="3" placeholder="Message..."></textarea>
+        </label>
+      </div>
+
+      <details class="customization" open>
+        <summary>Customization</summary>
+        <div class="custom-grid">
+          <label>Foreground
+            <input id="fgColor" type="color" value="#1a1a2e" />
+          </label>
+          <label>Background
+            <input id="bgColor" type="color" value="#ffffff" />
+          </label>
+          <label>Error Correction
+            <select id="ecc">
+              <option>L</option>
+              <option selected>M</option>
+              <option>Q</option>
+              <option>H</option>
+            </select>
+          </label>
+          <label>Size <span id="sizeValue">400px</span>
+            <input id="size" type="range" min="200" max="1000" value="400" />
+          </label>
+        </div>
+      </details>
+    </section>
+
+    <section class="panel preview-panel">
+      <h2>Live Preview</h2>
+      <canvas id="qrCanvas" width="400" height="400" aria-label="QR code preview"></canvas>
+      <p id="statusText" class="status">Enter content to generate your QR code.</p>
+      <div class="actions">
+        <button id="downloadPng">Download PNG</button>
+        <button id="downloadSvg" class="secondary">Download SVG</button>
+        <button id="copyData" class="secondary">Copy QR Data</button>
+        <button id="clearAll" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section class="panel form-panel">
+      <h2>Why QRForge</h2>
+      <p>QRForge runs fully in your browser, so your links and contact data are never uploaded. It supports URL, text, WiFi, email, and vCard formats with PNG/SVG export.</p>
+      <h3>Popular QR Use Cases</h3>
+      <p>Use QRForge as a <strong>free QR code generator</strong> for restaurant menus, WiFi sharing cards, event check-ins, digital business cards, and social profile links. You can also create a <strong>WiFi QR code</strong> for guests and a <strong>vCard QR code</strong> for quick contact sharing.</p>
+      <h3>FAQ</h3>
+      <p><strong>Is QRForge free?</strong> Yes, all features are free.</p>
+      <p><strong>Do you store my data?</strong> No, generation is client-side only.</p>
+      <p><strong>Can I use generated QR codes commercially?</strong> Yes.</p>
+    </section>
+
+    <section class="panel form-panel">
+      <h2>Related Free Tools</h2>
+      <p>Explore more browser-based utilities:</p>
+      <ul>
+        <li><a href="https://grrrp.github.io/pdfkit-online/">PDFKit Online</a> — merge, split, and convert PDFs.</li>
+        <li><a href="https://grrrp.github.io/wedbudget/">WedBudget</a> — wedding budget calculator.</li>
+        <li><a href="https://grrrp.github.io/namespark/">NameSpark</a> — domain name generator.</li>
+        <li><a href="https://grrrp.github.io/brandforge/">BrandForge</a> — business name and brand kit generator.</li>
+      </ul>
+    </section>
+
+    <section class="panel form-panel">
+      <h2>Sponsored</h2>
+      <div class="ad-slot" style="min-height: 250px;"><!-- AdSense in-content unit --></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div id="ad-banner" class="ad-slot">
+      <!-- AdSense code here -->
+    </div>
+    <small>© 2026 QRForge · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></small>
+  </footer>
+
+  <div id="consentBanner" class="consent-banner" hidden>
+    <p>We use local storage for saved preferences and may use cookies for ads/analytics where enabled.</p>
+    <div class="consent-actions">
+      <button id="consentAccept">Accept</button>
+    </div>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <script defer src="app.js"></script>
+  <script>
+    (() => {
+      const key = 'consent-qrforge-v1';
+      const banner = document.getElementById('consentBanner');
+      const btn = document.getElementById('consentAccept');
+      const loadAds = () => {
+        if (window.__qrforgeAdsLoaded) return;
+        window.__qrforgeAdsLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+
+        document.querySelectorAll('.ad-slot').forEach((slot, index) => {
+          slot.innerHTML = `<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="000000000${index + 1}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        });
+      };
+
+      if (!localStorage.getItem(key)) {
+        banner.hidden = false;
+      } else {
+        loadAds();
+      }
+      btn.addEventListener('click', () => {
+        localStorage.setItem(key, 'accepted');
+        banner.hidden = true;
+        loadAds();
+      });
+    })();
+  </script>
+</body>
+</html>
