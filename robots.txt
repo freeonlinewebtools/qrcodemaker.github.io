@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://grrrp.github.io/qrforge/sitemap.xml
-Host: grrrp.github.io
+Sitemap: https://freeonlinewebtools.github.io/qrcodemaker.github.io/sitemap.xml
+Host: freeonlinewebtools.github.io
